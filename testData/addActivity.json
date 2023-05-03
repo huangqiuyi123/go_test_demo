@@ -1,0 +1,27 @@
+[
+    {
+        "add": {
+            "id": 1,
+            "name": "添加百分比折扣活动",
+            "url": "https://niki.myshoplinestg.com/admin/api/sale/plugin/common/design_maker/admin/discount/config",
+            "method": "POST",
+            "resBody": {
+                "productDetailConfigEnable": false,
+                "settlementConfigEnable": true
+            }
+        }
+    },
+    {
+        "add": {
+            "id": 10086,
+            "name": "添加百分比折扣活动",
+            "url": "https://niki.myshoplinestg.com/admin/api/sale/plugin/common/design_maker/admin/discount/config",
+            "method": "POST",
+            "resBody": {
+                "productDetailConfigEnable": false,
+                "settlementConfigEnable": true
+            }
+        }
+    }
+]
+
