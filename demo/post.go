@@ -1,4 +1,4 @@
-package main
+package demo
 
 import (
 	"bytes"
@@ -6,16 +6,18 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strings"
 )
 
 func main() {
-	// get请求
+	// post请求
 	url := "https://niki-us.myshopline.com/admin/api/sale/plugin/common/design_maker/admin/discount/config"
-	method := "GET"
+	payload := strings.NewReader("{\"productDetailConfigEnable\":false,\"settlementConfigEnable\":true}")
+	method := "POST"
 
 	//构造请求
 	client := &http.Client{}
-	req, err := http.NewRequest(method, url, nil)
+	req, err := http.NewRequest(method, url, payload)
 
 	// 抛出请求异常
 	if err != nil {

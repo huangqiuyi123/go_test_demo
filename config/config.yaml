@@ -1,0 +1,45 @@
+environment:
+    test: .myshoplinestg.com
+    pre: .preview.myshopline.com
+    pro: .myshopline.com
+
+
+handle:
+    test: niki
+    pre: niki-us
+    pro: niki-us
+
+database:
+    host:
+    port:
+    user:
+    password:
+
+
+
+filePath:
+    jsonPath: "testData/addActivity.json"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

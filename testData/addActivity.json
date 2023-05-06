@@ -1,27 +1,28 @@
 [
     {
-        "add": {
-            "id": 1,
-            "name": "添加百分比折扣活动",
-            "url": "https://niki.myshoplinestg.com/admin/api/sale/plugin/common/design_maker/admin/discount/config",
-            "method": "POST",
-            "resBody": {
-                "productDetailConfigEnable": false,
-                "settlementConfigEnable": true
-            }
+        "id": 1,
+        "name": "设置自动折扣高级设置",
+        "url": "/admin/api/sale/plugin/common/design_maker/admin/discount/config",
+        "method": "POST",
+        "resBody": {
+            "productDetailConfigEnable": false,
+            "settlementConfigEnable": true
         }
+
     },
     {
-        "add": {
-            "id": 10086,
-            "name": "添加百分比折扣活动",
-            "url": "https://niki.myshoplinestg.com/admin/api/sale/plugin/common/design_maker/admin/discount/config",
-            "method": "POST",
-            "resBody": {
-                "productDetailConfigEnable": false,
-                "settlementConfigEnable": true
-            }
-        }
+        "id": 2,
+        "name": "设置折扣码横幅",
+        "url": "/admin/api/sale/plugin/common/design_maker/admin/code/banner",
+        "method": "POST",
+        "resBody": {"designBanner":{"templateId":"3","style":{"discountCodeBgColor":"#F04698","btnBgColor":"#FFE600","textColor":"#FFFFFF","btnTextColor":"#000000"}}}
+    },
+    {
+        "id": 3,
+        "name": "查询折扣码列表",
+        "url": "/admin/api/sale/activity/coupon/query/v2",
+        "method": "POST",
+        "resBody": {"pageNum":1,"pageSize":20,"currency":"USD","channel":"","language":"zh-hans-cn","benefitTypeList":[2,1]}
     }
 ]
 

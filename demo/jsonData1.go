@@ -1,4 +1,4 @@
-package common
+package demo
 
 import (
 	"os"
@@ -9,7 +9,7 @@ import (
 const file = "testData/addActivity.json"
 
 // 读取json数据
-func ReadJson() (request interface{}) {
+func ReadJson1() (request interface{}) {
 	f, _ := os.Open(file)
 	doc, _ := jsonquery.Parse(f)
 	//// 获取指定数据
@@ -66,6 +66,7 @@ func ReadJson() (request interface{}) {
 
 }
 
-func main() {
-	ReadJson()
-}
+//
+//func main() {
+//	ReadJson1()
+//}
