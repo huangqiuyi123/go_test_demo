@@ -27,8 +27,13 @@ type Config struct {
 		Password string `yaml:"password"`
 	} `yaml:"database"`
 
+	Header struct {
+		Cookie string `yaml:"cookie"`
+	} `yaml:"header"`
+
 	FilePath struct {
-		JsonPath string `yaml:"jsonPath"`
+		DiscountCodePath string `yaml:"discountCodePath"`
+		PreCasePath      string `yaml:"preCasePath"`
 	} `yaml:"filePath"`
 }
 
@@ -53,10 +58,12 @@ func GetConfig() Config {
 }
 
 //func main() {
-//    config := GetConfig()
-//    // 获取yaml文件数据
-//    envTest := config.Environment.Test
-//    jsonPath := config.FilePath.JsonPath
-//    fmt.Println(envTest)
-//    fmt.Println(jsonPath)
+//	config := GetConfig()
+//	// 获取yaml文件数据
+//	envTest := config.Environment.Test
+//	jsonPath := config.FilePath.JsonPath
+//	cookie := config.Header.Cookie
+//	fmt.Println(envTest)
+//	fmt.Println(jsonPath)
+//	fmt.Println(cookie)
 //}

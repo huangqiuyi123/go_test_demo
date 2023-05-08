@@ -4,13 +4,13 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
+
+	"testDemo/util"
 )
 
-func Get(url string, params map[string]string, headers map[string]string) (*http.Response, error) {
+func Get(url string, params map[string]string, headers map[string]string) (map[string]any, error) {
 
 	// new request
 	request, err := http.NewRequest(http.MethodGet, url, nil)
@@ -18,6 +18,8 @@ func Get(url string, params map[string]string, headers map[string]string) (*http
 		log.Println(err)
 		return nil, errors.New("new request is fail ")
 	}
+
+	request.Header.Set("cookie", configData.Header.Cookie)
 
 	// add params
 	param := request.URL.Query()
@@ -37,20 +39,23 @@ func Get(url string, params map[string]string, headers map[string]string) (*http
 
 	// http client
 	client := &http.Client{}
-	log.Println("Go %s URL : %s \n", http.MethodGet, request.URL.String())
-
+	log.Printf("请求方式： %s  ｜ 请求URL : %s \n\n", http.MethodGet, request.URL.String())
 	res, err := client.Do(request)
-	boby, _ := ioutil.ReadAll(res.Body)
 
-	// json字符串格式化
-	var str bytes.Buffer
-	_ = json.Indent(&str, boby, "", "    ")
-	fmt.Println("响应数据data：", str.String())
-	return res, err
+	// 格式化返回值
+	response, _ := util.ParseResponse(res)
+
+	//boby, _ := ioutil.ReadAll(res.Body)
+	//// json字符串格式化
+	//var str bytes.Buffer
+	//_ = json.Indent(&str, boby, "", "    ")
+	//log.Println("响应数据data：", str.String())
+
+	return response, err
 
 }
 
-func Post(url string, body interface{}, params map[string]string, headers map[string]string) (*http.Response, error) {
+func Post(url string, body interface{}, params map[string]string, headers map[string]string) (map[string]any, error) {
 	// add post body
 	var bodyJson []byte
 	var request *http.Request
@@ -69,6 +74,7 @@ func Post(url string, body interface{}, params map[string]string, headers map[st
 		return nil, errors.New("new request is fail: %v \n")
 	}
 	request.Header.Set("Content-type", "application/json")
+	request.Header.Set("cookie", configData.Header.Cookie)
 
 	// add params
 	param := request.URL.Query()
@@ -90,14 +96,16 @@ func Post(url string, body interface{}, params map[string]string, headers map[st
 	client := &http.Client{}
 	log.Printf("请求方式： %s  ｜ 请求URL : %s \n", http.MethodPost, request.URL.String())
 	res, err := client.Do(request)
-	boby, err := ioutil.ReadAll(res.Body)
+	// 格式化返回值
+	response, _ := util.ParseResponse(res)
 
-	// json字符串格式化
-	var str bytes.Buffer
-	_ = json.Indent(&str, boby, "", "    ")
-	fmt.Println("响应数据data：", str.String())
+	//boby, err := ioutil.ReadAll(res.Body)
+	//// json字符串格式化
+	//var str bytes.Buffer
+	//_ = json.Indent(&str, boby, "", "    ")
+	//log.Println("响应数据data：", str.String())
 
-	return res, err
+	return response, err
 
 }
 

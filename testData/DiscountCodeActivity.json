@@ -1,0 +1,195 @@
+[
+    {
+        "id": 1,
+        "type": "pre",
+        "name": "随机生成折扣码",
+        "url": "/admin/api/sale/activity/coupon/generate",
+        "method": "GET",
+        "resBody": {
+        }
+    },
+    {
+        "id": 2,
+        "type": "other",
+        "name": "设置自动折扣高级设置",
+        "url": "/admin/api/sale/plugin/common/design_maker/admin/discount/config",
+        "method": "POST",
+        "resBody": {
+            "productDetailConfigEnable": false,
+            "settlementConfigEnable": true
+        }
+
+    },
+    {
+        "id": 3,
+        "type": "other",
+        "name": "设置折扣码横幅",
+        "url": "/admin/api/sale/plugin/common/design_maker/admin/code/banner",
+        "method": "POST",
+        "resBody": {"designBanner":{"templateId":"3","style":{"discountCodeBgColor":"#F04698","btnBgColor":"#FFE600","textColor":"#FFFFFF","btnTextColor":"#000000"}}}
+    },
+    {
+        "id": 4,
+        "type": "other",
+        "name": "查询折扣码列表",
+        "url": "/admin/api/sale/activity/coupon/query/v2",
+        "method": "POST",
+        "resBody": {"pageNum":1,"pageSize":20,"currency":"USD","channel":"","language":"zh-hans-cn","benefitTypeList":[2,1]}
+    },
+    {
+        "id": 5,
+        "type": "coupon",
+        "name": "百分比折扣-无门槛减5%",
+        "url": "/admin/api/sale/activity/coupon/create",
+        "method": "POST",
+        "resBody": {
+            "seoHandleList":[
+                "百分比折扣-无门槛减5-"
+            ],
+            "benefitType":2,
+            "benefitConditions":[
+                {
+                    "benefitEvent":{
+                        "type":-1,
+                        "minThreshold":0
+                    },
+                    "benefit":{
+                        "offPercent":5
+                    },
+                    "sequenceNumber":1,
+                    "id":"BenefitGradient1"
+                }
+            ],
+            "benefitEventType":-1,
+            "effectScopeType":0,
+            "targetUserType":0,
+            "endTime":null,
+            "startTime":1683447540000,
+            "overlayAutoDiscounts":false,
+            "overlayDiscountCode":false,
+            "versionFlag":true,
+            "activitySeq":"",
+            "version":1,
+            "defaultSeo":"{\"title\":\"百分比折扣-无门槛减5%\",\"handleList\":[\"百分比折扣-无门槛减5-\"],\"url\":\"百分比折扣-无门槛减5-\"}",
+            "promotionCodes":[
+                "K9APRYYYHEM0"
+            ],
+            "defaultActivityName":"百分比折扣-无门槛减5%",
+            "userLimitedType":0,
+            "orderUseLimit":true
+        }
+    },
+    {
+        "id": 6,
+        "type": "coupon",
+        "name": "百分比折扣-满1000减10",
+        "url": "/admin/api/sale/activity/coupon/create",
+        "method": "POST",
+        "resBody": {
+            "seoHandleList":[
+                "百分比折扣-满1000减10-"
+            ],
+            "benefitType":2,
+            "benefitConditions":[
+                {
+                    "benefitEvent":{
+                        "type":0,
+                        "minThreshold":100000
+                    },
+                    "benefit":{
+                        "offPercent":10
+                    },
+                    "sequenceNumber":1,
+                    "id":"BenefitGradient1"
+                }
+            ],
+            "benefitEventType":0,
+            "effectScopeType":0,
+            "targetUserType":0,
+            "endTime":null,
+            "startTime":1683470820000,
+            "overlayAutoDiscounts":false,
+            "overlayDiscountCode":false,
+            "versionFlag":true,
+            "activitySeq":"",
+            "version":1,
+            "defaultSeo":"{\"title\":\"百分比折扣-满1000减10%\",\"handleList\":[\"百分比折扣-满1000减10-\"],\"url\":\"百分比折扣-满1000减10-\"}",
+            "promotionCodes":[
+                "6E1R7H89S88F"
+            ],
+            "defaultActivityName":"百分比折扣-满1000减10%",
+            "userLimitedType":0,
+            "orderUseLimit":true
+        }
+
+
+    },
+    {
+        "id": 7,
+        "type": "coupon",
+        "name": "百分比折扣-满3件减12%",
+        "url": "/admin/api/sale/activity/coupon/create",
+        "method": "POST",
+        "resBody": {
+            "seoHandleList":[
+                "百分比折扣-满3件减12-"
+            ],
+            "benefitType":2,
+            "benefitConditions":[
+                {
+                    "benefitEvent":{
+                        "type":1,
+                        "minThreshold":3
+                    },
+                    "benefit":{
+                        "offPercent":12
+                    },
+                    "sequenceNumber":1,
+                    "id":"BenefitGradient1"
+                }
+            ],
+            "benefitEventType":1,
+            "effectScopeType":0,
+            "targetUserType":0,
+            "endTime":null,
+            "startTime":1683471000000,
+            "overlayAutoDiscounts":false,
+            "overlayDiscountCode":false,
+            "versionFlag":true,
+            "activitySeq":"",
+            "version":1,
+            "defaultSeo":"{\"title\":\"百分比折扣-满3件减12%\",\"handleList\":[\"百分比折扣-满3件减12-\"],\"url\":\"百分比折扣-满3件减12-\"}",
+            "promotionCodes":[
+                "0IS7WGLZQMEU"
+            ],
+            "defaultActivityName":"百分比折扣-满3件减12%",
+            "userLimitedType":0,
+            "orderUseLimit":true
+        }
+    },
+    {
+        "id": 8,
+        "type": "coupon",
+        "name": "固定金額-无门槛减5",
+        "url": "/admin/api/sale/activity/coupon/create",
+        "method": "POST",
+        "resBody": {"seoHandleList":["固定金額-无门槛减5"],"benefitType":1,"benefitConditions":[{"benefitEvent":{"type":-1,"minThreshold":0},"benefit":{"benefitAmount":500},"sequenceNumber":1,"id":"BenefitGradient1"}],"benefitEventType":-1,"effectScopeType":0,"targetUserType":0,"endTime":null,"startTime":1683471240000,"overlayAutoDiscounts":false,"overlayDiscountCode":false,"versionFlag":true,"activitySeq":"","version":1,"defaultSeo":"{\"title\":\"固定金額-无门槛减5\",\"handleList\":[\"固定金額-无门槛减5\"],\"url\":\"固定金額-无门槛减5\"}","promotionCodes":["64VV0QQGMJP2"],"defaultActivityName":"固定金額-无门槛减5","userLimitedType":0,"orderUseLimit":true}
+    },
+    {
+        "id": 9,
+        "type": "coupon",
+        "name": "固定金額-满800减100",
+        "url": "/admin/api/sale/activity/coupon/create",
+        "method": "POST",
+        "resBody": {"seoHandleList":["固定金額-满800减100"],"benefitType":1,"benefitConditions":[{"benefitEvent":{"type":0,"minThreshold":80000},"benefit":{"benefitAmount":10000},"sequenceNumber":1,"id":"BenefitGradient1"}],"benefitEventType":0,"effectScopeType":0,"targetUserType":0,"endTime":null,"startTime":1683471300000,"overlayAutoDiscounts":false,"overlayDiscountCode":false,"versionFlag":true,"activitySeq":"","version":1,"defaultSeo":"{\"title\":\"固定金額-满800减100\",\"handleList\":[\"固定金額-满800减100\"],\"url\":\"固定金額-满800减100\"}","promotionCodes":["GDY6V1U3ME87"],"defaultActivityName":"固定金額-满800减100","userLimitedType":0,"orderUseLimit":true}
+    },
+    {
+        "id": 10,
+        "type": "coupon",
+        "name": "固定金額-满3件减10",
+        "url": "/admin/api/sale/activity/coupon/create",
+        "method": "POST",
+        "resBody": {"seoHandleList":["固定金額-满3件减10"],"benefitType":1,"benefitConditions":[{"benefitEvent":{"type":1,"minThreshold":3},"benefit":{"benefitAmount":2000},"sequenceNumber":1,"id":"BenefitGradient1"}],"benefitEventType":1,"effectScopeType":0,"targetUserType":0,"endTime":null,"startTime":1683471420000,"overlayAutoDiscounts":false,"overlayDiscountCode":false,"versionFlag":true,"activitySeq":"","version":1,"defaultSeo":"{\"title\":\"固定金額-满3件减10\",\"handleList\":[\"固定金額-满3件减10\"],\"url\":\"固定金額-满3件减10\"}","promotionCodes":["OLDZF3J1TCZ6"],"defaultActivityName":"固定金額-满3件减10","userLimitedType":0,"orderUseLimit":true}
+    }
+]
+

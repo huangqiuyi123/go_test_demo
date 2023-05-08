@@ -6,7 +6,7 @@ import (
 	"github.com/antchfx/jsonquery"
 )
 
-const file = "testData/addActivity.json"
+const file = "testData/DiscountCodeActivity.json"
 
 // 读取json数据
 func ReadJson1() (request interface{}) {

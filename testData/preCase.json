@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "type": "pre",
+        "name": "随机生成折扣码",
+        "url": "/admin/api/sale/activity/coupon/generate",
+        "method": "GET",
+        "resBody": {
+        }
+    }
+]

@@ -7,7 +7,7 @@ import (
 )
 
 func jsonData() (request interface{}) {
-	f, _ := os.Open("testData/addActivity.json")
+	f, _ := os.Open("testData/DiscountCodeActivity.json")
 	doc, _ := jsonquery.Parse(f)
 	// 获取指定数据
 	req := doc.SelectElement("add").Value()
